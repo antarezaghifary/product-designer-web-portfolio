@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/tailwind.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Document</title>
+  </head>
+  <body class="bg-black_cuy">
+    
+
+    <!-- Navigation -->
+    <nav class="py-9 px-4" x-data="{navOpen : true}">
+      <div class="container mx-auto">
+        <div class="flex items-center justify-between">
+          <img src="../public/assets/logo.png" class="order-1 sm:order-2" />
+          <img @click="navOpen = !navOpen" src="../public/assets/menu.svg" class="lg:hidden order-2 sm:order-1"/>
+          <div class="order-2 hidden lg:block">
+            <ul class="flex gap-16 text-white_cuy">
+              <li class="text-textnav font-bold text-sm font-Circular">
+                <a href="#home">Home</a>
+              </li>
+              <li class="text-textnav font-bold text-sm font-Circular opacity-50">
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li class="text-textnav font-bold text-sm font-Circular opacity-50">
+                <a href="#skills">Skills</a>
+              </li>
+              <li class="text-textnav font-bold text-sm font-Circular opacity-50">
+                <a href="#aboutme">About me</a>
+              </li>
+            </ul>
+          </div>
+          <div class="order-3 hidden sm:block ">
+            <button
+            class="grow bg-white_cuy px-8 py-4 font-bold text-textnav rounded-3xl text-sm"
+          >
+            Login
+          </button>
+
+          <!-- <img src="../public/assets/switch.png" alt="" class="grow"> -->
+          <button
+            class="grow bg-purple_cuy px-8 py-4 font-bold text-white rounded-3xl text-sm"
+          >
+            Sign Up
+          </button>
+          </div>
+        </div>
+      </div>
+      <div x-show="navOpen"
+        x-data="{open : false}"
+        class="z-50 fixed bottom-0 right-0 left-0 p-4 border lg:hidden bg-white_cuy"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+      >
+      <!-- lg:hidden -->
+        <ul class="flex justify-between">
+          <li>
+            <a
+              href=""
+              class="flex justify-center flex-col items-center gap-1 text-purple"
+            >
+              <ion-icon name="home-outline" class="text-2xl"></ion-icon>
+              <span class="text-base font-bold">Home</span>
+            </a>
+          </li>
+          <li>
+            <button
+              class="flex justify-center flex-col items-center gap-1 text-textnav opacity-50"
+            >
+              <ion-icon name="albums-outline" class="text-2xl"></ion-icon>
+              <span class="text-base font-bold">Portfolio</span>
+            </a>
+          </li>
+          <li>
+            <button
+              class="flex justify-center flex-col items-center gap-1 text-textnav opacity-50"
+            >
+              <ion-icon name="sparkles-outline" class="text-2xl"></ion-icon>
+              <span class="text-base font-bold">Skills</span>
+            </a>
+          </li>
+          <li>
+            <button
+              class="flex justify-center flex-col items-center gap-1 text-textnav opacity-50"
+            >
+              <ion-icon name="call-outline" class="text-2xl"></ion-icon>
+              <span class="text-base font-normal">About Me</span>
+            </a>
+          </li>
+          <li>
+            <button
+              @click="open = !open"
+            
+              class="flex justify-center flex-col items-center gap-1 text-textnav opacity-50"
+            >
+              <ion-icon name="menu-outline" class="text-2xl"></ion-icon>
+              <span class="text-base font-normal">More</span>
+            </a>
+          </li>
+        </ul>
+        <div
+          x-show="open"
+          class="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-4 w-3/4"
+          x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+        >
+          <button
+            class="grow bg-white_cuy px-8 py-4 font-bold text-textnav rounded-3xl text-sm"
+          >
+            Login
+          </button>
+          
+          <button
+            class="grow bg-purple_cuy px-8 py-4 font-bold text-white rounded-3xl text-sm"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Navigation -->
+
+    <!-- Hero -->
+
+    <section>
+      <div class="container mx-auto px-4 py-[70px]">
+        <div class="grid grid-cols-12  lg:flex flex-row lg:gap-4">
+          <div class="col-span-12 text-center order-1">
+            <h1 class="text-white_cuy text-[110px]">PRODUCT 
+              DESIGNER</h1>
+              <span class="text-[64px] bg-white_cuy text-transparent bg-gradient-to-r from-pink-500 to-violet-500">CRISTIAN MUÑOZ</span>
+
+              <div class="col-span-12 flex flex-row justify-between mt-[70px]">
+                <img src="../public/assets/Instagram.svg" alt="">
+                <img src="../public/assets/Figma.svg" alt="">
+                <img src="../public/assets/LinkedIn.svg" alt="">
+                <img src="../public/assets/Twitter.svg" alt="">
+                <img src="../public/assets/Telegram.svg" alt="">
+                <img src="../public/assets/Medium.svg" alt="">
+              </div>
+              <div class="items-center col-span-12 mt-[40px]">
+                <button
+                  class="bg-btn_cuy px-12 py-4 w-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple_cuy duration-300"
+                >
+                  
+                  <span class="text-white_cuy">Download Curriculum Vitae</span>
+                  <ion-icon name="arrow-down" class="text-white_cuy"></ion-icon>
+                </button>
+              </div>
+          </div>
+
+          <div class="col-span-12 order-2 hidden lg:block ">
+            <img src="../public/assets/Portal.svg" alt="">
+          </div>
+
+        
+            <div class="col-span-12 order-3 hidden lg:block">
+              <img src="../public/assets/colorfull.png" alt="">
+            </div>
+          
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- Summary -->
+      <section>
+        <div class="container mx-auto px-8">
+          <div class="grid grid-cols-12">
+            <div class="col-span-12 flex flex-col justify-between sm:flex-row drop-shadow-lg-shadow rounded-[32px] border border-white_cuy pb-[82px] px-20 gap-8">
+              
+            <div class=" text-summary_cuy  mt-36 text-center lg:col-span-4">
+              <h1 class="text-6xl">90%</h1>
+              <p class="text-2xl">Job Success Score on upwork test</p>
+            </div>
+
+            <div class=" text-summary_cuy  mt-36 text-center lg:col-span-4">
+              <h1 class="text-6xl">>25.000</h1>
+              <p  class="text-2xl">Duplicates on Figma Community</p>
+            </div>
+
+            <div class=" text-summary_cuy  mt-36 text-center lg:col-span-4">
+              <h1 class="text-6xl">>2k</h1>
+              <p  class="text-2xl">In Finished Works</p>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+    <!-- Summary -->
+
+
+    <!-- portfolio -->
+        <section id="portfolio">
+          <div class="container mx-auto">
+          <div class="grid grid-cols-12 mx-8">
+            <div class="col-span-12 ">
+                <h1 class="text-6xl text-white_cuy mt-[140px]">PORTFOLIO</h1>
+            </div>
+
+            <div class="col-span-12 items-center justify-center w-full lg:flex flex-row gap-3 mt-8">
+              
+                <div class="md:col-span-6  p-6 drop-shadow-lg-shadow rounded-[32px] border border-white_cuy justify-center items-center mt-4">
+                  <img src="../public/assets/port-img.png" alt="" class="w-full">
+                  <h1 class="text-white_cuy text-[28px]  mt-[20px]">Mi portal U</h1>
+                  <div class="flex flex-row gap-4  mt-[20px]">
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                  </div>
+                  <button
+                  class="bg-btn_cuy px-12 py-4 w-full  mt-[20px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple_cuy duration-300"
+                >
+                  
+                  <span class="text-white_cuy ">Download Curriculum Vitae</span>
+                  
+                </button>
+                </div>
+
+                <div class="md:col-span-6 p-6 drop-shadow-lg-shadow rounded-[32px] border border-white_cuy justify-center items-center  mt-4">
+                  <img src="../public/assets/port-img.png" alt="" class="w-full">
+                  <h1 class="text-white_cuy text-[28px] mt-[20px]">Mi portal U</h1>
+                  <div class="flex flex-row gap-4 mt-[20px]">
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                  </div>
+                  <button
+                  class="bg-white_cuy px-12 py-4 w-full mt-[20px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple_cuy duration-300"
+                >
+                  
+                  <span>Download Curriculum Vitae</span>
+                  
+                </button>
+                </div>
+              
+
+                
+                <div class="md:col-span-6 p-6 drop-shadow-lg-shadow rounded-[32px] border border-white_cuy justify-center items-center mt-4">
+                  <img src="../public/assets/port-img.png" alt="" class="w-full">
+                  <h1 class="text-white_cuy text-[28px] mt-[20px]">Mi portal U</h1>
+                  <div class="flex flex-row gap-4 mt-[20px]">
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                  </div>
+                  <button
+                  class="bg-btn_cuy px-12 py-4 w-full mt-[20px]  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple_cuy duration-300"
+                >
+                  
+                  <span class="text-white_cuy">Download Curriculum Vitae</span>
+                  
+                </button>
+                </div>
+
+                <div class="md:col-span-6 p-6 drop-shadow-lg-shadow rounded-[32px] border border-white_cuy justify-center items-center mt-4">
+                  <img src="../public/assets/port-img.png" alt="" class="w-full">
+                  <h1 class="text-white_cuy text-[28px] mt-[20px]">Mi portal U</h1>
+                  <div class="flex flex-row gap-4 mt-[20px]">
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                    <h1 class="text-white_cuy">Ux Design</h1>
+                  </div>
+                  <button
+                  class="bg-white_cuy px-12 py-4 w-full mt-[20px] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-purple_cuy duration-300"
+                >
+                  
+                  <span>Download Curriculum Vitae</span>
+                  
+                </button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+    <!-- portfolio -->
+
+    <!-- skill -->
+        <section id="skills">
+          <div class="container mx-auto">
+            <div class="grid grid-cols-12 mx-8">
+              <div class="col-span-12 ">
+                <h1 class="text-6xl text-white_cuy mt-[140px]">SKILLS</h1>
+              </div>
+              <div class="col-span-12 flex flex-col sm:flex-row gap-8  mt-8">
+              <div class="col-span-12 flex flex-row items-center justify-between border ">
+                  <div class="md:flex-row drop-shadow-lg-shadow rounded-[32px] border border-white_cuy text-center items-center justify-between py-10 px-20 ">
+                    <img src="../public/assets/graph.png" alt="" class="items-center justify-center w-full ">
+                    <h1 class="text-white_cuy mt-8">UX Design</h1>
+                    <p class="text-white_cuy">UI design is the process of designing the visual and interactive elements of a user interface, such as buttons, icons, and layout, to create an intuitive and pleasing experience for users.</p>
+                  </div>
+              </div>
+
+              <div class="col-span-12 flex flex-row items-center  justify-between">
+                <div class="md:flex-row  drop-shadow-lg-shadow rounded-[32px] border border-white_cuy text-center items-center justify-between py-10 px-20">
+                  <img src="../public/assets/graph.png" alt="" class="items-center justify-center w-full ">
+                  <h1 class="text-white_cuy mt-8">UI Design</h1>
+                  <p class="text-white_cuy">UI design is the process of designing the visual and interactive elements of a user interface, such as buttons, icons, and layout, to create an intuitive and pleasing experience for users.</p>
+                </div>
+            </div>
+
+            <div class="col-span-12 flex flex-row items-center  justify-between">
+              <div class="md:flex-row  drop-shadow-lg-shadow rounded-[32px] border border-white_cuy text-center items-center justify-between py-10 px-20">
+                <img src="../public/assets/graph.png" alt="" class="items-center justify-center w-full ">
+                <h1 class="text-white_cuy mt-8">Information Architecture</h1>
+                <p class="text-white_cuy">UI design is the process of designing the visual and interactive elements of a user interface, such as buttons, icons, and layout, to create an intuitive and pleasing experience for users.</p>
+              </div>
+          </div>
+
+          <div class="col-span-12 flex flex-row items-center  justify-between">
+            <div class="md:flex-row  drop-shadow-lg-shadow rounded-[32px] border border-white_cuy text-center items-center justify-between py-10 px-20">
+              <img src="../public/assets/graph.png" alt="" class="items-center justify-center w-full ">
+              <h1 class="text-white_cuy mt-8">Figma</h1>
+              <p class="text-white_cuy">UI design is the process of designing the visual and interactive elements of a user interface, such as buttons, icons, and layout, to create an intuitive and pleasing experience for users.</p>
+            </div>
+        </div>
+      </div>
+            </div>
+          </div>
+        </section>
+
+    <!-- skill -->
+
+
+    <!-- Perlindungan -->
+    <section>
+      <div class="container">
+        <div class="grid grid-cols-12  mt-20">
+          <div class="col-span-12 bg-purple_cuy items-center text-center justify-center w-full content-center justify-items-center py-[170px] px-20">
+            <h1 class="mb-10">Kaleb Lechtenberg</h1>
+            <span class="italic font-bold mx-auto mt-10">"Working with this freelancer has been great. His attention to detail is unparalleled and finished all work ahead of schedule. Will gladly send more work and I do not hesitate to recommend him to you on your project also."</span>
+            <img src="../public/assets/shied.png" alt="" class="mx-auto mt-10">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Perlindungan -->
+
+    <!-- about me -->
+      
+    <section id="aboutme">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-12 px-8 gap-6 py-[200px]">
+          <div class="col-span-12 lg:flex flex-row lg:col-span-6">
+            <div class=" text-white_cuy ">
+              <h1 class="text-6xl">ABOUT ME</h1>
+              <p class="text-4xl mt-[76px]">I am a <span class="text-purple_cuy">Product Designer</span> and Frontend Developer, I fully understand the process of design and development of a digital product, my job is to make a product usable and visually appealing, through the <span class="text-purple_cuy">Design Thinking</span> methodology I manage to create products that are endearing to users.</p>
+            </div>
+            
+          </div>
+          <div class="col-span-12 lg:col-span-6">
+            <img src="../public/assets/photo-baby.png" alt="" class="w-full h-[530px]">
+          </div>
+
+          <div class="col-span-12 lg:col-span-6 order-2 lg:order-1 mt-20">
+            <img src="../public/assets/photo-bro-1.png" alt="" class="w-full h-[530px]">
+          </div>
+          <div class="col-span-12 lg:col-span-6 justify-center items-center order-1 lg:order-2">
+            <div class=" text-white_cuy  mt-20">
+              <p class="text-4xl ">I am passionate about<span class="text-purple_cuy">never stop learning</span>, I am constantly training and learning about new and changing <span class="text-purple_cuy">technology</span> trends that way I bring an updated opinion of the Tech industry.</p>
+            </div>
+            
+          </div>
+
+          <div class="col-span-12 lg:flex flex-row lg:col-span-6 justify-items-center order-2">
+            <div class=" text-white_cuy  mt-20">
+              <p class="text-4xl">My full name is Cristian David Muñoz Camayo and more than what I said before I am a dreamer, I am proudly Colombian and in me you will find a human being with the desire to do his best to help others.</p>
+            </div>
+            
+          </div>
+          <div class="col-span-12 lg:col-span-6 order-2  mt-20">
+            <img src="../public/assets/photo-bro-2.png" alt="" class="w-full h-[530px]">
+          </div>
+
+          
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- about me -->
+
+
+    <!-- Footer -->
+      <section>
+        <div class="container mx-auto">
+          <div class="grid grid-cols-12 w-full justify-between">
+
+            <div class="col-span-12 flex flex-row w-full justify-between mt-6 bg-purple_cuy p-8">
+            <div class="col-span-4">
+              <img src="../public/assets/Escultures.png" alt="" class="w-[135px]">
+            </div>
+
+            <div class="col-span-4 items-center justify-center justify-items-center flex">
+              <h1 class="items-center justify-center">Thanks for visit my website If you have any questions you can write me to any of my social networks, I am sure I will answer you.</h1>
+            </div>
+
+            <div class="col-span-4">
+              <img src="../public/assets/tali.png" alt="" class="">
+            </div>
+
+          </div>
+
+          <div class="col-span-12 lg:flex flex-row justify-between bg-footer_cuy items-center text-center">
+
+          <div class="col-span-12 flex items-center justify-center mt-[51px]">
+            <img src="../public/assets/Logo-footer.svg" alt="">
+          </div>
+
+          <div class="col-span-12 mx-8 mt-[40px]">
+            <div class="flex flex-row justify-between gap-5 text-white_cuy">
+              <h1>Home</h1>
+              <h1>Portfolio</h1>
+              <h1>Skills</h1>
+              <h1>About Me</h1>
+            </div>
+          </div>
+
+          </div>
+        </div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+</html>

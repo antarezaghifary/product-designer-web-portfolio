@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Anton";
+    src: url("../public/font/Anton-Regular.ttf") format(".woff");
+  }
+}
+
+h1 {
+  font-family: Anton;
+}
+
+html {
+  font-family: Poppins;
+}
